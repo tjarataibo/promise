@@ -58,26 +58,26 @@ const allImg = document.getElementsByTagName("img");
 
 //PARALELISMO
 Promise.all([ //Las imágenes se mueven de izquierda a derecha
-    animateElement(allImg[0], -200, 600, 3000),
-    animateElement(allImg[1], -200, 600, 6000)
+    animateElement(allImg[0], 100, 600, 3000),
+    animateElement(allImg[1], 100, 600, 6000)
 ]).then(()=>{
-    console.log("Terminaron AMBAS animaciones");
+    console.log("Doge y Cate se movieron a la derecha");
     return Promise.all([ //Retornar promesa que se ejecutará en el próximo then
         //Las imágenes se mueven de derecha a izquierda
         animateElementSecond(allImg[0], 0, 300, 3000),
         animateElementSecond(allImg[1], 0, 300, 6000)
     ]);
 }).then(()=>{
-    console.log("Doge y cate se devolvieron");
+    console.log("Doge y cate bajaron");
     return Promise.all([ //Retornar promesa que se ejecutará en el próximo then
-        animateElement(allImg[0], 300, -200, 3000),
-        animateElement(allImg[1], 300, -200, 6000)
+        animateElement(allImg[0], 300, 100, 3000),
+        animateElement(allImg[1], 300, 100, 6000)
     ]);
 }).then(()=>{
     console.log("Doge y cate se devolvieron");
     return Promise.all([ //Retornar promesa que se ejecutará en el próximo then
-        animateElementSecond(allImg[0], 400, 0, 3000),
-        animateElementSecond(allImg[1], 400, 0, 4000)
+        animateElementSecond(allImg[0], 300, 0, 3000),
+        animateElementSecond(allImg[1], 300, 0, 4000)
     ]);
 }).catch(()=>{
 
